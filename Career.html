@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include the Icons8 style sheet -->
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+    <style>
+        p{
+            color : grey;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* White background */
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px; /* Increased margin on the top */
+            margin: 40px 50px; /* Larger margin on the left and right */
+        }
+
+        .box {
+            position: relative;
+            flex: 0 0 15%; /* Adjust the width of the box */
+            padding: 10px;
+            height: 150px; /* Set an explicit height for the boxes */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align at the top */
+            align-items: center;
+            text-align: center;
+            font-size: 18px; /* Adjust the font size of the emoji */
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+            cursor: pointer;
+            border: none; /* No border */
+            border-radius: 10px; /* Optional: Add border radius for rounded corners */
+            background-color: #ffffff; /* White background */
+            margin: 0 10px; /* Add margin between the boxes */
+        }
+
+        .box img {
+            width: 80px; /* Adjust the width of the image */
+            height: 80px; /* Adjust the height of the image */
+            object-fit: cover; /* Ensure the image covers the specified dimensions */
+            border-radius: 10px; /* Optional: Add border radius for rounded corners */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .box i {
+            position: absolute;
+            top: 50%; /* Center the icon vertically */
+            left: 50%; /* Center the icon horizontally */
+            transform: translate(-50%, -50%); /* Adjust for centering */
+        }
+
+        .boxText {
+            margin-top: 90px; /* Adjust margin to place text under the icons */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .box:hover {
+            background-color: #f2f2f2; /* Light grey on hover */
+            transform: scale(1.1);
+        }
+
+        .box.active {
+            background-color: #e6e6e6; /* One shade darker than the background color */
+        }
+
+        .boxContent {
+            display: none;
+            margin-top: 10px; /* Add margin to create space between box and content */
+        }
+
+        .boxContent.active {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .expandableContent {
+            display: none;
+        }
+
+        .expandableContent.active {
+            display: block;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            flex: 1;
+            height: 100%;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9; /* Lighter grey for dropdown background */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%; /* Position dropdown at the bottom */
+            width: 100%;
+            text-align: center;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-option {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-option:hover {
+            background-color: #ddd; /* Grey background on hover */
+        }
+
+        .skool {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display : block;
+        }
+        .header-links {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            width: 160px; /* Adjusted width to fit both links on one line */
+        }
+
+        .header-links h6 {
+            text-decoration: underline;
+            margin: 0;
+        }
+
+    </style>
+    <script>
+        function showContent(boxId) {
+            // Hide all content sections
+            var contents = document.querySelectorAll('.boxContent');
+            contents.forEach(function (content) {
+                content.classList.remove('active');
+            });
+
+            // Show the selected content section
+            var selectedContent = document.getElementById(boxId + 'Content');
+            selectedContent.classList.add('active');
+
+            // Emphasize the clicked box
+            var boxes = document.querySelectorAll('.box');
+            boxes.forEach(function (box) {
+                box.classList.remove('active');
+            });
+            var selectedBox = document.getElementById(boxId);
+            selectedBox.classList.add('active');
+        }
+        function selectOption(option) {
+            if (option === 'Resume') {
+                window.open('Files/Daniel_Mulenda_Resume.pdf', '_blank');
+            } else if (option === 'Cover Letter') {
+                window.open('Files/Cover Letter1.pdf', '_blank');
+            }
+        }
+
+
+        function toggleExpandableContent(contentId) {
+            var content = document.getElementById(contentId);
+            content.classList.toggle('active');
+        }
+    </script>
+</head>
+
+<body>
+    <section >
+        <div class="box" onclick="showContent('education')">
+            <img src="icons/icons8-university-96.png" alt="Your Icon" onclick="toggleExpandableContent('educationContent')">
+            <!-- Use the Icons8 link for the University icon -->
+            <i class="la la-graduation-cap"></i>
+            <div class="boxText">Education</div>
+        </div>
+        <div class="box" onclick="showContent('research')">
+            <img src="icons/icons8-research-96.png" alt="Your Icon" onclick="toggleExpandableContent('researchContent')">
+            <div class="boxText">Research/Experience/Skills</div>
+        </div>
+        <div class="box" onclick="showContent('projects')">
+            <img src="icons/icons8-coding-96.png" alt="Your Icon" onclick="toggleExpandableContent('projectsContent')">
+            <div class="boxText">Projects</div>
+        </div>
+        <div class="box dropdown" onclick="showContent('resume')">
+            <img src="icons/icons8-pdf-96.png" alt="Your Icon" onclick="toggleExpandableContent('resumeContent')">
+            
+            <div class="boxText">Resume and Cover Letter</div>
+            <div class="dropdown-content">
+                <div class="dropdown-option" onclick="selectOption('Resume')">Resume</div>
+                <div class="dropdown-option" onclick="selectOption('Cover Letter')">Cover Letter</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        
+        <div id="educationContent" class="boxContent expandableContent">
+            <h1 class = "edu" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Education</h1>
+
+            <div>
+                <img class="skool" src="icons/rsz_1georgia-state-university-vector-logo.png" alt="Georgia State University Logo" onclick="toggleExpandableContent('gsuContent')">
+                <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">Georgia State University | 2018 - 2020</strong>
+                <div id="gsuContent" class="boxContent expandableContent">
+                    <!-- Content specific to Georgia State University -->
+                    
+                    <ul>
+                        <p>Degree: Bachelors of Computer Science</p>
+                        <p>Relevant coursework: Calculus I, II, III, Principles of Physics I & II, Linear Algebra, Principles of Chemistry I, Introduction to Computer Science</p>
+
+
+                    </ul>
+                     
+                
+                </div>
+            </div>
+            <div>
+                <img class="skool" src="icons/rsz_georgia_tech_shortened_logo.png" alt="Georgia Tech Logo" onclick="toggleExpandableContent('gtContent')">
+                <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">Georgia Institute of Technology | 2021 - 2023</strong>
+                <div id="gtContent" class="boxContent expandableContent">
+                    <!-- Content specific to Georgia Institute of Technology -->
+                    <ul> 
+                        <p>Degree: Bachelors of Computer Science</p>
+                        <p>Threads : Modelling&Simulation/Intelligence</p>
+                        <p>Relevant coursework: Intro to Object Oriented Programming, Data Structures and Algorithms, Objects and Design, Design & Analysis of Algorithms, Numerical Analysis, Systems & Network, Computer Organization and Programming, Machine Learning, Intro to Artificial Intelligence, Computer Vision</p>
+
+
+                    </ul>
+                    
+                </div>
+                <h1 style = "color : white">This is machine code not visible to the humans eyes do not attempt to read this.. It might be filled with Malware, beware , and aware of the danger </h1>
+            </div>
+            <!-- Your education content goes here -->
+        </div>
+
+        <div id="researchContent" class="boxContent expandableContent">
+            <h1 class = "edu" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Research</h1>
+            <ul>
+                <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">Undergraduate Researcher in VIP Program</strong> <em style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">(Georgia Institute of Technology/Atlanta, GA)</em> <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">|2022 – 2023</strong>
+                <p><strong>Program name :</strong> Data-driven education</p>
+                <p>Over the course of one year in the program, I actively contributed to the development of a tool known as the "Keyword Analysis Tool." This tool was designed with the specific aim of identifying and scrutinizing keywords selected by professors during the creation of assessment materials. Following the analysis, the tool provided a difficulty index derived from the identified keywords. The overarching objective of this tool was to maintain clarity in the wording of assessment materials, preventing any unnecessary complexity that could hinder students' comprehension of the material.</p>
+                <p>During my time in the program I occupied two roles : Back-end developer and project manager. As a Back-end Developer, I conducted correlation analyses between exam formats and academic performance, leveraging research papers and school datasets. I developed a robust Flask and Heroku API to process PDF files, extracting relevant keywords for analysis, and designed an API representing difficulty indicators. Using data-driven insights, I contributed to understanding the relationship between exam structure and student achievement.
+    
+                    In the role of Project Manager, I successfully onboarded and aligned new team members with project objectives, optimized resource allocation through comprehensive schedules, and led productive weekly meetings. Task assignments were managed efficiently, with clear roles, responsibilities, and milestones communicated to sub-teams. Maintaining open communication channels, I fostered collaboration between team members and program professors.</p>
+            </ul>
+            <h1 class = "edu" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Experience</h1>
+            <ul>
+                <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">Software Engineering Intern</strong> <em style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">(Congo Coders/Kinshasa, DRC)</em> <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">|July 2022 – August 2023</strong>
+                <p>During my time At Congo Coders, I actively engaged in the on-site (beta) testing of a novel product for a client. Implemented version control operations using Bitbucket and developed a robust API using Spring Boot and MySQL to integrate standard deviation, mean, and median calculations for data samples, enhancing data analysis capabilities.</p>
+            </ul>
+
+            <h1 class = "edu" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Skills</h1>
+            <ul>
+                <p><strong>Programming language:</strong> Java, Python</p>
+                <p><strong>Framework/Tools/IDE:</strong> Visual Studio Code, IntelliJ, PyCharm, Eclipse, GitHub (CLI & Desktop), Spring Boot</p>
+                <p><strong>Additional skills:</strong> HTML & CSS (basic)</p>
+                <p><strong>Language:</strong> French (native), English (fluent), Spanish (basic)</p>
+
+            </ul>
+            
+
+
+            <!-- Your research/experience content goes here -->
+            
+        </div>
+        
+
+        <div id="projectsContent" class="boxContent expandableContent">
+            <h1 class = "edu" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Projects</h1>
+            <ul>
+                <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; "><a href = "https://github.gatech.edu/TheFightingPi">Tower Defense Game</a></strong> <em style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">(Georgia Institute of Technology/Atlanta, GA)</em> <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">| 2022</strong>
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Photo column -->
+                    <div class="col-md-6">
+                        <img src="images/rsz_project1image.png" alt="Project Photo" class="img-fluid" style = "margin-top: 20px; ">
+                    </div>
+                    <!-- Description column -->
+                    <div class="col-md-6">
+                        <p>Project details</p>
+                        <p>Collaborated in a group of four to design an engaging tower defense game using JavaFX and Scene Builder. Developed the backend API with Agile methods and Test-Driven Development (TDD) for robust functionality. Utilized GitHub for version control, promoting seamless teamwork and comprehensive change tracking. Drafted compelling project presentations using video editing tools such as iMovie and QuickTime Player to effectively convey concepts and outcomes.</p>
+
+                        
+                    </div>
+                </div>
+            </div> 
+            
+            <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; "><a href = "https://github.gatech.edu/Dmulenda3/CS4641Group49">Machine Learning Model</a></strong> <em style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">(Georgia Institute of Technology/Atlanta, GA)</em> <strong style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; ">| 2023</strong>
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Photo column -->
+                    <div class="col-md-6">
+                        <img src="images/Project 2.webp" alt="Project Photo" class="img-fluid" style = "margin-top: 20px;">
+                    </div>
+                    <!-- Description column -->
+                    <div class="col-md-6">
+                        <p><strong>Goal :</strong>Validity of news posts on social media</p>
+                        <p>Project details</p>
+                        <p>Executed feature reduction techniques utilizing TF-IDF and Principal Component Analysis (PCA) to enhance model efficiency and accuracy. Employed Pandas for data manipulation and harnessed the power of the Matplotlib library for data visualization to unveil insightful patterns within the dataset. Spearheaded the development and continuous upkeep of a comprehensive group website. Leveraged HTML, CSS, and GitHub for hosting to create an accessible hub for documentation, resources, and project progress tracking.</p>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            </ul>
+
+        </div>
+
+        <!-- Add more boxContent sections as needed -->
+    </section>
+    <div class="header-links">
+        <h6 onclick="window.location.href='index.html'">Home</h6>
+        <h6 onclick="window.location.href='about.html'">About Me</h6>
+        <h6 onclick="window.location.href='contact.html'">Contact Me</h6>
+    </div>
+</body>
+
+</html>

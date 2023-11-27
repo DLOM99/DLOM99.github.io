@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Set your desired background color */
+
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333; /* Set your desired header background color */
+            color: #fff; /* Set your desired text color */
+        }
+
+        .rectangle {
+            width: 60%; /* Adjust the width of the rectangle */
+            height: 300px; /* Adjust the height of the rectangle */
+            background-color: #e0e0e0; /* Set your desired rectangle background color */
+            border-radius: 20px; /* Adjust the border-radius for rounded corners */
+            margin-top: 100px; /* Adjust the margin from the header */
+            margin-left: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .social-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .social-list-item {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .social-list-item a {
+            text-decoration: none;
+            color: #333; /* Set your desired text color */
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff; /* Set your desired link background color */
+            transition: background-color 0.3s ease;
+        }
+
+        .social-list-item a:hover {
+            background-color: #ddd; /* Set your desired link background color on hover */
+        }
+        .header-links {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            width: 160px; /* Adjusted width to fit both links on one line */
+        }
+
+        .header-links h6 {
+            text-decoration: underline;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Contact Me </h1>
+        <div class="header-links">
+            <h6 onclick="window.location.href='index.html'">Home</h6>
+            <h6 onclick="window.location.href='about.html'">About Me</h6>
+            <h6 onclick="window.location.href='Career.html'">Career</h6>
+        </div>
+    </header>
+
+    <div class="rectangle">
+        <ul class="social-list">
+            <li class="social-list-item"><a href="mailto:Mulenda.daniel060@gmail.com">Email</a></li>
+            <li class="social-list-item"><a href="https://www.linkedin.com/in/daniel-mulenda/">LinkedIn</a></li>
+            <li class="social-list-item"><a href="https://github.gatech.edu/Dmulenda3">Github</a></li>
+            <li class="social-list-item"><a href="https://instagram.com/artist_ya_danger?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">Instagram</a></li>
+        </ul>
+    </div>
+
+    <!-- Your content goes here -->
+
+</body>
+
+</html>

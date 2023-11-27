@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image and Bio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        p{
+            color : grey;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .centered-div {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .centered-div img {
+            width: 100%;
+            max-width: 300px; /* Adjust the max-width as needed */
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .bio-div {
+            width: 80%;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 35px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .header-links {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            width: 160px; /* Adjusted width to fit both links on one line */
+        }
+
+        .header-links h6 {
+            text-decoration: underline;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-links">
+        <h6 onclick="window.location.href='index.html'">Home</h6>
+        <h6 onclick="window.location.href='Career.html'">Career</h6>
+        <h6 onclick="window.location.href='contact.html'">Contact Me</h6>
+    </div>
+
+    <div class="centered-div">
+        <img src="images/IMG_2791-removebg-preview.png" alt="Your Image">
+    </div>
+
+    <div class="bio-div">
+        <h2>Bio</h2>
+        <p>Greetings! I am Daniel Josué Mulenda, currently a senior at The Georgia Institute of Technology, pursuing a degree in computer science with a concentration in Intelligence and Modeling and Simulation. My academic journey has been driven by a deep passion for education, constantly exploring ways to infuse creativity and engagement into learning through computation and programming.
+
+            Beyond the realm of code, I find joy in various pursuits. I am an avid sports enthusiast, particularly drawn to the electrifying worlds of soccer and basketball. Staying active is crucial to me, and you can often find me in the gym, reveling in the energy of a good workout. Equally important is my time with loved ones—nothing beats the warmth of shared moments.
+            
+            When the binary world takes a backseat, I unleash my creative side as an amateur singer. Music holds a special place in my heart, and I harbor aspirations of stepping into the spotlight as a performer someday.
+            
+            In the spirit of my diverse interests, I wholeheartedly cheer for Barcelona (VISCA BARCA!) and Marseille (ALLEZ L’OM). Life, like programming, is a multifaceted adventure, and I am excited about every line of code and every note of music that shapes my journey.
+            
+            Let's embrace the rhythm of life and code together!</p>
+        
+    </div>
+
+    <button type="button" class="btn btn-outline-dark" onclick="window.location.href='Career.html'">Discover More</button>
+
+</body>
+</html>
+

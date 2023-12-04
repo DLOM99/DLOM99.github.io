@@ -21,7 +21,7 @@
         section {
             display: flex;
             justify-content: center;
-            padding: 40px 20px; /* Increased margin on the top */
+             /* Increased margin on the top */
             margin: 40px 50px; /* Larger margin on the left and right */
         }
 
@@ -41,7 +41,7 @@
             border: none; /* No border */
             border-radius: 10px; /* Optional: Add border radius for rounded corners */
             background-color: #ffffff; /* White background */
-            margin: 0 10px; /* Add margin between the boxes */
+            margin: 0 55px; /* Add margin between the boxes */
         }
 
         .box img {
@@ -143,6 +143,8 @@
             display: flex;
             justify-content: space-between;
             width: 160px; /* Adjusted width to fit both links on one line */
+            margin-bottom: 50px;
+            padding-bottom: 50px;
         }
 
         .header-links h6 {
@@ -188,11 +190,17 @@
 </head>
 
 <body>
+    <div class="header-links">
+        <h6 onclick="window.location.href='index.html'">Home</h6>
+        <h6 onclick="window.location.href='about.html'">About Me</h6>
+        <h6 onclick="window.location.href='contact.html'">Contact Me</h6>
+    </div>
     <section >
         <div class="box" onclick="showContent('education')">
             <img src="icons/icons8-university-96.png" alt="Your Icon" onclick="toggleExpandableContent('educationContent')">
             <!-- Use the Icons8 link for the University icon -->
             <i class="la la-graduation-cap"></i>
+    
             <div class="boxText">Education</div>
         </div>
         <div class="box" onclick="showContent('research')">
@@ -330,11 +338,7 @@
 
         <!-- Add more boxContent sections as needed -->
     </section>
-    <div class="header-links">
-        <h6 onclick="window.location.href='index.html'">Home</h6>
-        <h6 onclick="window.location.href='about.html'">About Me</h6>
-        <h6 onclick="window.location.href='contact.html'">Contact Me</h6>
-    </div>
+
 </body>
 
 </html>

@@ -23,15 +23,22 @@
             align-items: center;
             min-height: 100vh; /* Ensure the page takes at least the full height of the viewport */
             box-sizing: border-box;
-            animation: changeBackground 4s infinite alternate; /* Apply background change animation */
+            animation: changeBackground 7s infinite alternate; /* Apply background change animation */
+        }
+
+        .bio-div {
+            width: 80%;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
         }
 
         @keyframes changeBackground {
             from {
-                background: url('images/marek-piwnicki-MVAy8tfiGQk-unsplash.jpg') center center/cover no-repeat; /* Start with this image */
+                background: url('images/tranquil-scene-back-lit-mountain-peak-adventure-generated-by-ai.jpg') center center/cover no-repeat; /* Start with this image */
             }
             to {
-                background: url('images/marek-piwnicki-4yXFcCtLtGk-unsplash.jpg') center center/cover no-repeat; /* End with this image */
+                background: url('images/beautiful-desert-landscape.jpg') center center/cover no-repeat; /* End with this image */
             }
         }
 
@@ -45,7 +52,7 @@
         .image-container img {
             width: 100%; /* Make the image fill its container */
             display: block; /* Remove extra space beneath the image */
-            animation: scaleAnimation 2s infinite alternate; /* Apply animation */
+            animation: scaleAnimation 5s infinite alternate; /* Apply animation */
         }
 
         @keyframes scaleAnimation {
@@ -92,12 +99,13 @@
             cursor: pointer;
             display: flex;
             justify-content: space-between;
-            width: 160px; /* Adjusted width to fit both links on one line */
+            width: 200; /* Adjusted width to fit both links on one line */
         }
 
         .header-links h6 {
             text-decoration: underline;
-            margin: 0;
+            margin: 10px;
+
         }
 
     </style>
@@ -105,23 +113,25 @@
 <body class="padding-bottom">
 
     <div class="header-links">
-        <h6 onclick="window.location.href='about.html'">About Me</h6>
-        <h6 onclick="window.location.href='Career.html'">Career</h6>
-        <h6 onclick="window.location.href='contact.html'">Contact Me</h6>
+        <h6 onclick="window.location.href='about.html'"><strong>About Me</strong></h6>
+        <h6 onclick="window.location.href='Career.html'"><strong>Career</strong></h6>
+        <h6 onclick="window.location.href='contact.html'"><strong>Contact Me</strong>e</h6>
         
     </div>
 
     <div class="image-container">
         <img src="images/IMG_2791-removebg-preview.png" alt="Your Image">
+        
     </div>
 
     <div class="bio">
-       
-        <h2> Dive into Daniel's Small world</h2>
+        <h1> Daniel Josue Mulenda</h1>
+    
     </div>
 
+
     <div class="button-container">
-        <button type="button" class="btn btn-outline-dark" onclick="window.location.href='about.html'">Dive</button>
+        <button type="button" class="btn btn-outline-dark" onclick="window.location.href='about.html'"><strong>Dive</strong></button>
     </div>
 
 </body>
